@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.blog{
+    @include mq('md'){
+     position: relative;
+    }
+}
+
+.blog::before{
+    @include mq('md'){
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60.24%;
+        background-image: url(/images/common/blog-bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: -1;
+    }
+}
+
+.blog__contents{
+    margin-top: rem(24);
+    @include mq('md'){
+        margin-top: rem(80);
+    }
+}
+
+.blog__button{
+    margin-top: rem(40);
+    text-align: center;
+    @include mq('md'){
+        margin-top: rem(80);
+    }
+}

@@ -1,0 +1,43 @@
+@use "global" as *;
+
+//button
+.swiper-button-next, .swiper-button-prev{
+    background-image: url(/images/common/to-top.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: rem(80);
+    height: rem(80);
+    cursor: pointer;
+}
+
+
+.swiper-button-next{
+    transform: scale(-1, 1);
+}
+
+.swiper-button-next:hover{
+    opacity: 0.6;
+}
+.swiper-button-prev:hover{
+    opacity: 0.6;
+}
+
+
+//swiper card campaign
+
+.campaign__contents .swiper-slide,
+.campaign__contents .swiper-slide.swiper-slide-active,
+.campaign__contents .swiper-slide.swiper-slide-next,
+.campaign__contents .swiper-slide.swiper-slide-prev{
+    //max-width: rem(333);
+    //min-width: rem(280);
+        transition: transform 200ms 0s ease-out, -webkit-transform 200ms 0s ease-out, -moz-transform 200ms 0s ease-out, -o-transform 200ms 0s ease-out;
+}
+
+.campaign__contents .swiper-slide:hover,
+.campaign__contents .swiper-slide.swiper-slide-next:hover,
+.campaign__contents .swiper-slide.swiper-slide-prev:hover,
+.campaign__contents .swiper-slide.swiper-slide-active:hover{
+    transform: translateY(rem(-6));
+}

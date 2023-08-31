@@ -1,0 +1,61 @@
+@use "global" as *;
+
+
+
+
+.drawer__inner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
+  overflow-y: scroll;
+}
+.drawer__inner.inner{
+  padding-left: rem(37);
+  padding-right: rem(35);
+}
+
+
+.drawer__contents{
+  display: grid;
+  grid-auto-flow: column;
+  padding-top: rem(52);
+  grid-template-rows: repeat(2, 1fr);
+  gap: rem(40);
+  background-color: $green;
+  color: $white;
+  @include mq('md'){
+      display: flex;
+  }
+}
+
+
+
+.drawer__item{
+  font-size: rem(16);
+  font-weight: $bold;
+  position: relative;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+}
+
+.drawer__item::before{
+  position: absolute;
+  content: '';
+  background-image: url(/images/common/icon-starfish.svg);
+  top: rem(16);
+  left: rem(-28);
+  width: rem(18);
+  height: rem(18);
+}
+
+//.drawer__sub-item + .drawer__sub-item{
+//  margin-top: rem(24);
+//}
+.drawer__sub-item{
+  font-weight: $normal;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+}
+

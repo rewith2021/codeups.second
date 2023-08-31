@@ -1,0 +1,35 @@
+@use "global" as *;
+
+
+.price-list__item + .price-list__item{
+  margin-top: rem(40);
+}
+
+.price-list__title{
+  padding-bottom: rem(4);
+  border-bottom: 1px solid $green;
+}
+
+.price-list dl{
+  display: flex;
+  margin-top: rem(8);
+  font-size: rem(14);
+  @include mq('md'){
+    font-size: rem(16);
+  }
+}
+
+.price-list__menu{
+  width: 73.3%;
+  @include mq('md'){
+    width: 61%;
+  }
+}
+
+.price-list__price{
+  width: 26.7%;
+  text-align: right;
+  @include mq('md'){
+    width: 39%;
+  }
+}

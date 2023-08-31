@@ -1,0 +1,72 @@
+@use "global" as *;
+
+
+.footer{
+    background-color: $green;
+    color: $white;
+    padding-top: rem(48);
+    padding-bottom: rem(56);
+    @include mq('md'){
+        padding-top: rem(80);
+        padding-bottom: rem(80);
+    }
+}
+
+.footer__icon{
+    @include mq('md'){
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.footer__logo{
+    aspect-ratio: 120/45;
+    text-align: left;
+    width: 32%;
+}
+
+.footer__logo img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.footer__sns{
+    display: flex;
+    gap: rem(16);
+}
+
+.footer__sns-fb,
+.footer__sns-instagram{
+    aspect-ratio: 1/1;
+    width: rem(24);
+    @include mq('md'){
+        width: rem(32);
+    }
+}
+
+.footer__sns-fb img,
+.footer__sns-instagram img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.footer__nav{
+    margin-top: rem(40);
+   // margin-left: rem(35);
+    padding-left: rem(35);
+    @include mq('md'){
+        margin-top: rem(24);
+        margin-left: 0;
+    }
+}
+
+.footer__copyright{
+    margin-top: rem(40);
+    text-align: center;
+}
+
+.footer__copyright small{
+    font-size: rem(12);
+    font-family: $english-font;
+    line-height: 1.5;
+}

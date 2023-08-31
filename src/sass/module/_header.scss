@@ -1,0 +1,217 @@
+@use "global" as *;
+
+.header{
+    width: 100%;
+    height: rem(80) ;
+   
+    background: rgba(17, 17, 17, 0.5) ;
+    @include mq('md'){
+    height: rem(90);
+    }
+}
+.header.change-color {
+    background-color: $black; //スクロールしたあとのヘッダー背景色
+    transition: background-color 0.4s ease-in-out;
+  }
+
+.header__inner{
+    padding-left: rem(15);
+    padding-right: rem(15);
+    height: inherit;
+    
+    display: flex;
+    @include mq('md'){
+        padding-left: rem(40);
+        padding-right: rem(40);
+
+    }
+}
+.header__logo{
+    
+    z-index: 1200;
+    height: inherit;
+    width: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 133/50;
+    @include mq('md'){
+        width: rem(94);
+    }
+}
+
+.header__logo a{
+    height: inherit;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo img{
+    display: inline-block;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+//pc
+.header__nav{
+    height: inherit;
+    margin-left: auto;
+}
+
+.header__items{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: inherit;
+}
+
+.header__item{
+    letter-spacing: rem(2);
+    line-height: rem(35);
+    font-weight: $regular;
+    height: inherit;
+    color: $white;
+}
+
+
+
+.header__item a{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: inherit;
+    padding-left: rem(12);
+    padding-right: rem(12);
+    
+
+    //animation
+    position: relative;
+}
+
+.header__item a:hover{
+    color: $white;
+  }
+  
+  .header__item a::after{
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: rem(16);
+    left: 10%;
+    /*線の形状*/
+    width: 60%;
+    height: 1%;
+    background:$white;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+  
+  }
+  
+  .header__item a:hover::after{
+    transform: scale(1, 1);
+  }
+  .header__item a:hover {
+    text-decoration: none; /* 下線のデフォルトを解除 */
+    position: relative; /* 相対的な位置指定 */
+  }
+  
+  .header__item a:hover::after {
+    content: ""; /* 疑似要素のコンテンツを空にする */
+    position: absolute; /* 絶対的な位置指定 */
+    bottom: rem(16); /* 下線の位置を調整 */
+    left: 0; /* 左端から開始 */
+    width: 100%; /* 下線の幅を100%に設定 */
+    border-bottom: 1px solid $white; /* 下線を作成 */
+
+  }
+  
+
+.header__english{
+  
+    font-size: rem(18);
+    font-family: $english-font;
+    font-weight: $normal;
+    line-height: 1;
+}
+.header__japanese{
+    
+    font-size: rem(10);
+    font-family: $base-font;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+.header__drawer{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 100;
+  position: absolute;
+  background-color: $green;
+}
+
+//header__hamburger
+.header__hamburger{
+    right: rem(15);
+    position: fixed;
+    z-index: 9999;
+    width: rem(32);
+    height: inherit;
+    
+    @include mq('md'){
+        display: none;
+    }
+}
+.header__hamburger.is-active{
+   
+    right: rem(15);
+    height: inherit;
+}
+
+.header__hamburger span{
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    transition: 0.3s transform, 0.3s background-color;
+}
+
+.header__hamburger.is-active span{
+    background-color: $white;
+}
+
+.header__hamburger span:nth-child(1){
+    top: rem(28);
+}
+.header__hamburger span:nth-child(2){
+    top: rem(40);
+    transition: 0.3s opacity;
+}
+.header__hamburger span:nth-child(3){
+    top: rem(52);
+}
+
+.header__hamburger.is-active span:nth-child(1){
+    top: rem(40);
+    transform: rotate(45deg);
+}
+.header__hamburger.is-active span:nth-child(2){
+    opacity: 0;
+}
+.header__hamburger.is-active span:nth-child(3){
+    top: rem(40);
+    transform: rotate(-45deg);
+}

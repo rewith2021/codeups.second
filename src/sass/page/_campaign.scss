@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.campaign{
+    overflow: hidden;
+}
+
+.campaign__swiper-button{
+    display: none;
+    @include mq('md'){ 
+        display: block;  
+        position: relative;
+        width: rem(240);
+        height: rem(80);
+        margin-left: auto;
+        margin-top: rem(-80);
+    }
+}
+
+//swiper 詳細度CSS設定
+.campaign__button.swiper-button-next,
+.campaign__button.swiper-button-prev{
+    width: rem(80);
+    height: inherit;
+}
+
+
+.campaign__contents{
+    
+    margin-right: calc(50% - 50vw);
+    margin-top: rem(24);
+    @include mq('md'){
+        margin-top: rem(40);
+    }
+}
+
+
+
+.campaign__button{
+    margin-top: rem(40);
+    text-align: center;
+    @include mq('md'){
+        margin-top: rem(80);
+    }
+}

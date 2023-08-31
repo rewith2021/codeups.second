@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.blog-cards{
+  display: grid;
+  gap: rem(40);
+  justify-content: center;
+  @include mq('md'){
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-cards__item{
+  width: 100%;
+  max-width: rem(550);
+}
+
+//hover animation
+.blog-cards a{
+  transition: all 200ms 0s ease-out, -webkit-transform 200ms 0s ease-out, -moz-transform 200ms 0s ease-out, -o-transform 200ms 0s ease-out;
+}
+
+.blog-cards a:hover{
+  opacity: 1;
+  transform: translateY(rem(-7));
+  img{
+    opacity: 0.8;
+  }
+}

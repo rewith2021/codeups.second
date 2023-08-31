@@ -1,0 +1,41 @@
+@use "global" as *;
+
+
+.global-nav{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: rem(40);
+    column-gap: rem(40);
+    @include mq('md'){
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.global-nav__item{
+    font-size: rem(16);
+    font-weight: $bold;
+    position: relative;
+    padding-top: rem(12);
+    padding-bottom: rem(12);
+}
+
+.global-nav__item::before{
+    position: absolute;
+    content: '';
+    background-image: url(/images/common/icon-starfish.svg);
+    top: rem(16);
+    left: rem(-28);
+    width: rem(18);
+    height: rem(18);
+}
+
+
+.global-nav__sub-item{
+    padding-top: rem(12);
+    padding-bottom: rem(12);
+    font-weight: $normal;
+}
+
